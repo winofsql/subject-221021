@@ -16,6 +16,5 @@ function myFunction() {
 
   // ファイルオブジェクトのメソッドで 最初に取得したフォルダーに移動
   file.moveTo(folder);  
-
   
 }
