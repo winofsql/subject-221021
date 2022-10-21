@@ -162,3 +162,46 @@ function sendMyMail(to, subject, body) {
 
 }
 ```
+
+### 画面 HTML
+![image](https://user-images.githubusercontent.com/1501327/197116189-f268abb9-997c-499f-8dbd-718323a5f433.png)
+```html
+    <h5 class="alert alert-primary">こんにちは世界</h5>
+
+    <div id="content" class="m-4">
+      <table>
+        <tr>
+          <td>送り先</td>
+          <td><input id="to" style="width:400px;"></td>
+        </tr>
+        <tr>
+          <td>件名</td>
+          <td><input id="subject" style="width:400px;"></td>
+        </tr>
+        <tr>
+          <td>本文</td>
+          <td><textarea id="body" style="width:400px;height:200px;"></textarea></td>
+        </tr>
+      </table>
+      <input id="btn" name="btn" type="button" value="実行" class="btn btn-primary">
+    </div>    
+```
+
+## jQuery
+```javascript
+  $("#btn").on("click",function(){
+      var to;
+      var subject;
+      var body;
+
+      to = $("#to").val();
+      subject = $("#subject").val();
+      body = $("#body").val();
+      google.script.run.sendMyMail(to, subject, body);
+
+
+      // 本体での処理( テンプレートリテラル使用 )
+      // console.log(`本体での処理 : ${ counter++ }`);
+      // alert(`本体での処理 : ${ counter++ }`);
+  });
+```
