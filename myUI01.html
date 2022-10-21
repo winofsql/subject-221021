@@ -10,7 +10,14 @@ var counter = 0;
 $(function(){
 
   $("#btn").on("click",function(){
-      google.script.run.sendMyMail("doumi@i-seifu.jp", "件名", "本文\r\n内容");
+      var to;
+      var subject;
+      var body;
+
+      to = $("#to").val();
+      subject = $("#subject").val();
+      body = $("#body").val();
+      google.script.run.sendMyMail(to, subject, body);
 
 
       // 本体での処理( テンプレートリテラル使用 )
@@ -26,7 +33,21 @@ $(function(){
     <h5 class="alert alert-primary">こんにちは世界</h5>
 
     <div id="content" class="m-4">
-        <input id="btn" name="btn" type="button" value="実行" class="btn btn-primary">
+      <table>
+        <tr>
+          <td>送り先</td>
+          <td><input id="to" style="width:400px;"></td>
+        </tr>
+        <tr>
+          <td>件名</td>
+          <td><input id="subject" style="width:400px;"></td>
+        </tr>
+        <tr>
+          <td>本文</td>
+          <td><textarea id="body" style="width:400px;height:200px;"></textarea></td>
+        </tr>
+      </table>
+      <input id="btn" name="btn" type="button" value="実行" class="btn btn-primary">
     </div>    
 
   </body>
