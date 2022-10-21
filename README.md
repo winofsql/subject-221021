@@ -1,6 +1,6 @@
 # subject-221021
 
-```gs
+```javascript
 
 function myFunction() {
 
