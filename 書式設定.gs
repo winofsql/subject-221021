@@ -10,8 +10,14 @@ function myFunction() {
 
   // 書式無しテキスト
 
+  // 出力の場合、性別名を使用して管理者名をセット
   var cn = {
     "社員コード" : ["A:A","A"],
+    "性別" : ["E:E","E"],
+    "性別名" : ["L:L","L"],
+    "管理者" : ["J:J","J"],
+    "管理者名to" : ["L:L","L"],
+    "管理者名from" : ["M:M","M"],
     "給与" : ["H:H","H"]
   };
 
@@ -55,9 +61,9 @@ function myFunction() {
     range2 = sheet2.getRange("D" + i);
     range2.setValue( sheet1.getRange("D" + i).getDisplayValue() );
 
-    // 性別
-    range2 = sheet2.getRange("E" + i);
-    range2.setValue( sheet1.getRange("E" + i).getDisplayValue() );
+    // 性別の列(E) に 性別名(L)の値を転送する
+    range2 = sheet2.getRange(cn["性別"][1] + i);
+    range2.setValue( sheet1.getRange(cn["性別名"][1] + i).getDisplayValue() );
 
     // 作成日
     range2 = sheet2.getRange("F" + i);
@@ -82,7 +88,12 @@ function myFunction() {
     range2 = sheet2.getRange("K" + i);
     range2.setValue( sheet1.getRange("K" + i).getDisplayValue() );
 
+    // 管理者名
+    range2 = sheet2.getRange(cn["管理者名to"][1] + i);
+    range2.setValue( sheet1.getRange(cn["管理者名from"][1] + i).getDisplayValue() );
+
+
     i++;
   }
-  
+
 }
