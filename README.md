@@ -124,7 +124,7 @@ function onOpen(e) {
 ```
 
 ## メニューからダイアログの呼び出し( HTML 使用 )
-```
+```javascript
 function GetUIbyHTML1() {
 
   console.log("一つ目");
