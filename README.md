@@ -116,8 +116,9 @@ function clearAll() {
 function onOpen(e) {
 
   var cur_ui = SpreadsheetApp.getUi();
-  cur_ui.createMenu('GAS の LOG テスト')
-     .addItem('ダイアログ表示', 'GetUIbyHTML')
+  cur_ui.createMenu('HTMLページ')
+     .addItem('ダイアログ表示1', 'GetUIbyHTML1')
+     .addItem('ダイアログ表示2', 'GetUIbyHTML2')
      .addToUi();
 }
 ```
